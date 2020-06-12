@@ -1,0 +1,15 @@
+function No2WebpackPlugin(options){
+    this.options = options
+}
+No2WebpackPlugin.prototype.apply = function(compiler){
+    compiler.hooks.compile.tap("No2",()=>{
+        // console.log("compile")
+    })
+    compiler.hooks.compilation.tap("No2",(compilation)=>{
+        // console.log("compilation")
+        compilation.hooks.chunkAsset.tap("No2",(chunk,filename)=>{
+            // console.log(chunk,filename)
+        })
+    })
+}
+module.exports = No2WebpackPlugin
