@@ -6,7 +6,7 @@ function WatcherPlugin(options) {
 WatcherPlugin.prototype.apply = function (compiler) {
     compiler.hooks.afterCompile.tapAsync("WatcherPlugin", (compilation, cb) => {
         let filename = path.resolve(__dirname,"src/index.html")
-        console.log(compilation.fileDependencies)
+        // console.log(compilation.fileDependencies)
         cb();
     })
     compiler.hooks.watchRun.tapAsync("WatcherPlugin", (compiler, cb) => {

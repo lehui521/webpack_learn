@@ -1,9 +1,9 @@
 const path = require("path")
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const No2WebpackPlugin = require('./plugins/No2-webpack-plugin');
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+// const No2WebpackPlugin = require('./plugins/No2-webpack-plugin');
 const FileListPlugin = require("./plugins/File-list-plugin")
-const WatcherPlugin = require("./plugins/watch-plugin")
+// const WatcherPlugin = require("./plugins/watch-plugin")
 
 module.exports = {
     entry: './src/index.js',
@@ -15,12 +15,12 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'custom-plugin'
         }),
-        new CleanWebpackPlugin(),
+        // new CleanWebpackPlugin(),
         new FileListPlugin({
-            filename:"name.md"
+            filePath:path.resolve(__dirname,"src/i18n")
         }),
-        new WatcherPlugin(),
-        new No2WebpackPlugin({ msg: 'good boy!' }),
+        // new WatcherPlugin(),
+        // new No2WebpackPlugin({ msg: 'good boy!' }),
 
     ]
 }
